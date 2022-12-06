@@ -1,0 +1,359 @@
+{% include 'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+/* --------------------- */
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.opacity-one{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.4), "{% static 'images/DIU-PLAY.png' %}");
+
+    background-position: center;
+    background-size: cover;
+    /* position: relative; */
+}
+
+.text-box{
+    width: 90%; 
+    color: #fff; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); /*For center*/
+    text-align: center;
+}
+.text-box h1{
+     font-size: 52px;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin: 20px 0 40px;/*top,left,bottom*/
+}
+.hero-btn:hover{
+    border: 1px solid #dbb3b0;
+    background: #62d440;
+    transition: 1s;
+}
+
+/* ------------------- */
+    .course{
+    width: 80%;
+    margin: auto; 
+    text-align: center;
+    padding-top: 100px;
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin-top: 5%;
+    display: flex; /*all the div inside this row will be in the column*/
+    justify-content: space-between;
+}
+.course-col{
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+.campus{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.campus-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.campus-col img{
+    width: 100%;
+    display: block;
+}
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%; 
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    transition: 0.5s;
+}
+.layer:hover{
+    background: rgba(226, 0, 0, 0.7);
+}
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+}
+/*Facilities*/
+.facilities{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px; ;
+}
+.facilities-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.facilities-col img{
+    width: 100%; 
+    border-radius: 10px;
+}
+.facilities-col h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+/*Testimonials*/
+.testimonials{
+    width: 80%; 
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+}
+.tetimonial-col{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3f3;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+}
+.tetimonial-col img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+.tetimonial-col p{
+    padding: 0;
+}
+.tetimonial-col h3{
+    margin-top: 15px;
+    text-align: left;
+}
+.tetimonial-col .fa{
+    color: #f44336;
+}
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.icons .fa{
+    color: #f44336; 
+    margin: 0 13px; 
+    cursor: pointer;
+    padding: 18px 0;
+}
+.fa-heart-o{
+    color: #f44336; 
+}
+</style>
+<body>
+    <section class="header">
+        <img src="{% static 'images/main.jpg' %}" class="opacity-one">
+        <div class="text-box">
+            <h1>DIU Playground</h1>
+            <a href="#justdemo" class="hero-btn">Visit us to know more</a>
+        </div>
+    </section>
+    <!-- <img src="{% static 'images/fire1.jpg' %}" style="width:100%; height:650px;"> -->
+    
+    <section class="course">
+        <h1>The beauty of our playground</h1>
+        <p>What you will get</p>
+        <div class="row">
+            <div class="course-col">
+                <h3>Fabulous center field</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ipsa harum impedit vel libero
+                    veritatis hic rerum doloremque cumque, aliquam in et obcaecati expedita aperiam fugiat cum tenetur
+                    totam. Veniam.</p>
+            </div>
+            <div class="course-col">
+                <h3>Effective practice ground</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ipsa harum impedit vel libero
+                    veritatis hic rerum doloremque cumque, aliquam in et obcaecati expedita aperiam fugiat cum tenetur
+                    totam. Veniam.</p>
+            </div>
+            <div class="course-col">
+                <h3>Delighted to play basketball</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ipsa harum impedit vel libero
+                    veritatis hic rerum doloremque cumque, aliquam in et obcaecati expedita aperiam fugiat cum tenetur
+                    totam. Veniam.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="campus">
+        <h1 id="justdemo">VENUES</h1>
+        <p>This is our campus</p>
+        <div class="row">
+            <div class="campus-col">
+                <img src="{% static 'images/lomba.jpg' %}" style="height: 120%;">
+                    <div class="layer">
+                    <h3>Center Field</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="{% static 'images/foot.jpg' %}" style="height: 120%;">                <div class="layer">
+                    <h3>Practice Field</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="{% static 'images/bask.jpg' %}" style="height: 120%;">                
+                <div class="layer">
+                    <h3>Basketball Ground</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="facilities">
+        <h1>Our Facilities</h1>
+        <p>This is our facilities</p>
+        <div class="row">
+            <div class="facilities-col">
+                <img src="{% static 'images/center.jpg' %}"> 
+                <h3>Center Field</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat totam quae alias illum sunt aliquam laboriosam voluptatum, nobis unde voluptatibus quo rerum, ipsa asperiores veritatis? Voluptate consequuntur aspernatur expedita?</p>
+            </div>
+            <div class="facilities-col">
+                <img src="{% static 'images/prac.jpg' %}"> 
+                <h3>Practice Field</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat totam quae alias illum sunt aliquam laboriosam voluptatum, nobis unde voluptatibus quo rerum, ipsa asperiores veritatis? Voluptate consequuntur aspernatur expedita?</p>
+            </div>
+            <div class="facilities-col">
+                <img src="{% static 'images/bask.jpg' %}" style="height: 45%;"> 
+                <h3>Basketball Ground</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat totam quae alias illum sunt aliquam laboriosam voluptatum, nobis unde voluptatibus quo rerum, ipsa asperiores veritatis? Voluptate consequuntur aspernatur expedita?</p>
+            </div>
+        </div>
+    </section>
+    <!--Testimonials-->
+    <section class="testimonials">
+        <h1>Student's Feedback</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis hic odio magnam sed itaque dolorem magni, rerum atque perferendis nihil culpa cupiditate animi! Sequi esse ullam ratione nihil maiores.</p>
+        <div class="row">
+            <div class="tetimonial-col">
+                <img src="{% static 'images/user1.jpg' %}"> 
+                <div>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, ex. Similique modi accusantium error vitae possimus inventore non quis doloribus velit neque explicabo quia a minus alias, quod reprehenderit asperiores.</p>
+                    <h3>Sara</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+            <div class="tetimonial-col">
+                <img src="{% static 'images/user2.jpg' %}"> 
+                <div>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, ex. Similique modi accusantium error vitae possimus inventore non quis doloribus velit neque explicabo quia a minus alias, quod reprehenderit asperiores.</p>
+                    <h3>Harun Ur Rahid</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!--Footer-->
+     <section class="footer">
+        <h4>About Us</h4>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, veritatis. Delectus ut, voluptatibus recusandae possimus architecto, <br>earum laboriosam inventore doloremque sapiente dignissimos et repudiandae, pariatur quidem minus obcaecati harum soluta!</p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+       <p>Made by DIU <b style="font-weight: bold">Venta Black</b></p>
+    </section>
+</body>
+
+</html>
